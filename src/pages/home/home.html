@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Calculadora</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>{{ nome_usuario }}</h2>
+  <ion-item>
+    <ion-label>Sanduiche - {{quantidade_sanduiche}}x</ion-label>
+    <ion-checkbox [(ngModel)]="cucumber" (ionChange)="showAlert()"></ion-checkbox>
+   </ion-item>
+  <ion-item>
+    <ion-label>Suco - {{ quantidade_suco }}x</ion-label>
+    <ion-checkbox [(ngModel)]="cucumber2" (ionChange)="calcularSuco()"></ion-checkbox>
+  </ion-item>
+  <ion-list>
+      <ion-item>
+        <ion-label floating>Valor fornecido: </ion-label>
+        <ion-input [(ngModel)]="valorFornecido" type="number"></ion-input>
+      </ion-item>
+    </ion-list>
+  <ion-item>
+      <ion-label>Total: </ion-label>
+      <ion-label>{{total}}</ion-label>
+    </ion-item>
+  <ion-item>
+      <ion-label>Troco: </ion-label>
+      <ion-label>{{valorTroco}}</ion-label>
+    </ion-item>
+  <ion-list>
+      <button ion-button color="primary" block (click)="calcular()">Calcular</button>
+      <button ion-button color="danger" block (click)="apagarValores()">Resetar Valores</button>
+  </ion-list>
+</ion-content>
